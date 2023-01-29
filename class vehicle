@@ -1,0 +1,98 @@
+#include <iostream>
+using namespace std;
+void add();
+void sub();
+void multi();
+void div();
+int main()
+{
+    char c, x;
+    cout<<"WELCOME TO BASIC CALCULATOR\n";
+    do
+    {
+        cout<<"Press + for Addition\nPress - for substraction\nPress * for multiplication\nPress / for division\n";
+        cin>>c;
+        switch(c)
+        {
+            case '+':add();
+            break;
+            case '-':sub();
+            break;
+            case '*':multi();
+            break;
+            case '/':div();
+            break;
+            default:cout<<"Wrong Input!";
+            break;
+        }
+        cout<<"Do you want to continue? (Y/N)";
+        cin>>x;
+    } while (toupper(x)=='Y');  
+    cout<<"THANK YOU for Using!\n";
+    return 0;
+}
+void add()
+{
+    int n;
+    float x, sum=0;
+    cout<<"Enter number of elements: \n";
+    cin>>n;
+    cout<<"Enter the elements: \n";
+    for(int i=0;i<n;i++)
+    {
+        cin>>x;
+        sum=sum+x;
+    }
+    cout<<"Result = "<<sum;
+    cout<<"\n-------------------------------------------\n";
+}
+void sub()
+{
+    float x, sub; int n;
+    cout<<"Enter number of elements: \n";
+    cin>>n;
+    cout<<"Enter the elements: \n";
+    for(int i=0;i<n;i++)
+    {
+        cin>>x;
+        sub=x-sub;
+    }
+    cout<<"Result = "<<sub;
+    cout<<"\n-------------------------------------------\n";
+}
+void multi()
+{
+    int n;
+    float x, mul=1;
+    cout<<"Enter number of elements: \n";
+    cin>>n;
+    cout<<"Enter the elements: \n";
+    for(int i=0;i<n;i++)
+    {
+        cin>>x;
+        mul=mul*x;
+    }
+    cout<<"Result = "<<mul;
+    cout<<"\n-------------------------------------------\n";
+}
+void div()
+{
+    float a, div=1, den = 1; int n;
+    cout<<"Enter number of elements: \n";
+    cin>>n;
+    cout<<"Enter the elements: \n";
+    for(int i=0;i<n;i++)
+    {
+        cin>>a;
+        if(i == 0)
+        {
+            div = a/div; 
+        } 
+        else
+        {
+            div = div/a;
+        }         
+    }
+    cout<<"Result = "<<div;
+    cout<<"\n-------------------------------------------\n";
+}
